@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever Developer Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .referral-link {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .copy-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .save-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Forever Developer Program</h1>
+
+    <h2>Important Information</h2>
+    <p><b>This platform is the beginning of great things</b></p>
+
+    <h2>Amount in Rs</h2>
+    <table>
+        <tr>
+            <th>Amount (Rs)</th>
+        </tr>
+        <tr>
+            <td id="amountCell" style="font-weight: bold; font-size: 24px; text-align: center;">0</td>
+        </tr>
+    </table>
+
+    <h2>Your Referrals</h2>
+    <table>
+        <tr>
+            <th>Referral Name</th>
+            <th>Date Joined</th>
+        </tr>
+    </table>
+
+    <div class="referral-link">
+        Referral: <span id="referralName">John Doe</span><br>
+        Referral Number: <span id="referralNumber">123456</span><br>
+        <button class="copy-button" id="copyReferralLinkButton">Copy Link</button>
+    </div>
+
+    <h2>Your Information</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td><input type="text" id="nameInput" placeholder="Your Name"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="email" id="emailInput" placeholder="Your Email"></td>
+        </tr>
+    </table>
+
+    <h2>EasyPaisa</h2>
+    <table>
+        <tr>
+            <th>EasyPaisa Number</th>
+            <td><input type="text" id="easyPaisaInput" placeholder="Your EasyPaisa Number"></td>
+        </tr>
+    </table>
+
+    <h2>JazzCash</h2>
+    <table>
+        <tr>
+            <th>JazzCash Number</th>
+            <td><input type="text" id="jazzCashInput" placeholder="Your JazzCash Number"></td>
+        </tr>
+    </table>
+
+    <!-- Save Information Button -->
+    <div class="button-container">
+        <button class="save-button" id="saveInfoButton">Save Information</button>
+    </div>
+</div>
+
+<script>
+    // JavaScript code for copying referral link and changing password (your existing code)
+
+    // Copy Referral Link to Clipboard
+    const copyReferralLinkButton = document.getElementById("copyReferralLinkButton");
+    const referralName = document.getElementById("referralName");
+    const referralNumber = document.getElementById("referralNumber");
+
+    copyReferralLinkButton.addEventListener("click", function() {
+        const referralText = `Referral: ${referralName.textContent}, Referral Number: ${referralNumber.textContent}`;
+        const tempInput = document.createElement("input");
+        tempInput.value = referralText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Referral link copied to clipboard!");
+    });
+
+    // Save Information functionality
+    const saveInfoButton = document.getElementById("saveInfoButton");
+    const nameInput = document.getElementById("nameInput");
+    const emailInput = document.getElementById("emailInput");
+    const easyPaisaInput = document.getElementById("easyPaisaInput");
+    const jazzCashInput = document.getElementById("jazzCashInput");
+
+    saveInfoButton.addEventListener("click", function() {
+        const name = nameInput.value;
+        const email = emailInput.value;
+        const easyPaisaNumber = easyPaisaInput.value;
+        const jazzCashNumber = jazzCashInput.value;
+
+        // You can add code here to save the information in your system or perform any desired action
+        alert("Information saved successfully!");
+    });
+</script>
+
+</body>
+</html>
